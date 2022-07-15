@@ -36,10 +36,6 @@
   box-sizing: border-box;
 }
 
-input {
-  font-size: inherit;
-}
-
 button {
   padding: 0;
   border: none;
