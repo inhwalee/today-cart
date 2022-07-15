@@ -166,13 +166,12 @@ class CartView {
       e.dataTransfer.setData("text/plain", this.#dragTargetEl.dataset.id);
     };
     const onDragEnter = (e) => {
-      this.#dropTargetEl = e.target.closest("li");
-      if (!this.#dropTargetEl) return;
-
       document
         .querySelectorAll(".cart-item")
         .forEach((cartItemEl) => cartItemEl.classList.remove("drag-hover"));
 
+      this.#dropTargetEl = e.target.closest("li");
+      if (!this.#dropTargetEl) return;
       this.#dropTargetEl.classList.add("drag-hover");
       this.#dropTargetId = this.#dropTargetEl.dataset.id;
     };
@@ -181,6 +180,9 @@ class CartView {
     };
     const onDragEnd = (e) => {
       this.#dragTargetEl.classList.remove("drag-target");
+      document
+        .querySelectorAll(".cart-item")
+        .forEach((cartItemEl) => cartItemEl.classList.remove("drag-hover"));
     };
     const onDrop = (e) => {
       const dragTargetId = e.dataTransfer.getData("text/plain");
