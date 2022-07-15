@@ -36,6 +36,10 @@
   box-sizing: border-box;
 }
 
+input {
+  font-size: inherit;
+}
+
 button {
   padding: 0;
   border: none;
@@ -118,10 +122,6 @@ header .add-ons {
   align-items: center;
   color: var(--color-white);
   opacity: 0.7;
-}
-
-header .add-ons .date {
-  margin: 0 0.5rem;
 }
 
 main {
@@ -219,7 +219,6 @@ main .cart::-webkit-scrollbar {
 
 .cart__list li b span {
   flex-grow: 1;
-  padding: 0.5rem;
 }
 
 .cart__list li b span.price {
@@ -254,6 +253,8 @@ main .cart::-webkit-scrollbar {
   border: none;
   outline: none;
   background-color: var(--color-input);
+  font-size: var(--font-base-pc);
+  transform: scale(0.87);
   color: var(--color-white);
 }
 
@@ -277,11 +278,11 @@ main .cart::-webkit-scrollbar {
   }
 
   header .add-ons .date {
-    margin: 0;
+    margin: 0 0.5rem;
   }
 
   .cart__list li b span {
-    padding: 0;
+    padding: 0.5rem;
   }
 
   .form {
@@ -292,8 +293,6 @@ main .cart::-webkit-scrollbar {
 
   .form input {
     width: 44%;
-    font-size: var(--font-base-pc);
-    transform: scale(0.87);
   }
 
   .button--add {
