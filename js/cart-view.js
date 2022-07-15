@@ -74,7 +74,7 @@ class CartView {
   }
 
   updateHtmlList() {
-    this.#htmlList = "";
+    this.#htmlList = [];
     const data = this.#storage.getAllItems();
 
     for (let item of data) {
@@ -112,8 +112,6 @@ class CartView {
   }
 
   render() {
-    if (this.#storage.getNumberOfItems() <= 0) return;
-
     this.updateHtmlList();
     this.#container.innerHTML = this.#htmlList.join("");
 
