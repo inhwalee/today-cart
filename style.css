@@ -225,7 +225,7 @@ main .cart::-webkit-scrollbar {
 .cart__purchased {
   display: flex;
   justify-content: space-between;
-  padding: 2.8rem 1.5rem 3rem;
+  padding: 2.8rem 1rem 3rem;
   border-top: 1.6px solid var(--color-dark-gray);
   font-weight: 700;
   color: var(--color-black);
