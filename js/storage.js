@@ -33,7 +33,6 @@ export default class Storage {
 
     this.#data = [...this.#data, newItem];
     this.#uniqueId += 1;
-
     this.setStorage();
   }
 
@@ -66,7 +65,6 @@ export default class Storage {
 
   removeItem(id) {
     const clickedItem = this.getItem(id);
-
     if (clickedItem) {
       this.#data = this.getAllItems().filter((item) => item.id !== Number(id));
       this.setStorage();
@@ -81,7 +79,6 @@ export default class Storage {
 
   handlePurchased(id) {
     const clickedItem = this.getItem(id);
-
     if (clickedItem) {
       clickedItem.purchased = !clickedItem.purchased;
       this.setStorage();

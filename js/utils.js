@@ -2,6 +2,7 @@ export const convertFormat = {
   date(date) {
     return date.toLocaleDateString("ko");
   },
+
   day(day) {
     switch (day) {
       case 0:
@@ -22,9 +23,11 @@ export const convertFormat = {
         throw new Error("0~6 사이의 숫자 중 하나를 입력해주세요.");
     }
   },
+
   price(price) {
     return price.toLocaleString("ko");
   },
+
   getFormatedDate(oneDay) {
     const date = this.date(oneDay);
     const day = this.day(oneDay.getDay());

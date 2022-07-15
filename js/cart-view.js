@@ -5,17 +5,14 @@ export default class CartViewBuilder {
     this.storage = storage;
     return this;
   }
-
   setContainerWithID(containerId) {
     this.container = document.getElementById(containerId);
     return this;
   }
-
   setTemplate(template) {
     this.template = template;
     return this;
   }
-
   build() {
     return new CartView(this.storage, this.container, this.template);
   }
@@ -63,7 +60,6 @@ class CartView {
       nameInput.focus();
       return;
     }
-
     this.#storage.setItem(nameInput.value, priceInput.value);
     this.render();
     toMoveScrollDown(".cart");
@@ -76,7 +72,6 @@ class CartView {
   updateHtmlList() {
     this.#htmlList = [];
     const data = this.#storage.getAllItems();
-
     for (let item of data) {
       this.#htmlList = [...this.#htmlList, this.setRenderTemplate(item)];
     }
@@ -84,9 +79,7 @@ class CartView {
 
   setRenderTemplate(item) {
     if (!item) return;
-
     let renderTemplate = this.#template;
-
     renderTemplate = renderTemplate.replace("{{__id__}}", item.id);
     renderTemplate = renderTemplate.replace("{{__name__}}", item.name);
     renderTemplate = renderTemplate.replace(
@@ -114,7 +107,6 @@ class CartView {
   render() {
     this.updateHtmlList();
     this.#container.innerHTML = this.#htmlList.join("");
-
     const liEls = document.querySelectorAll(".cart-item ");
 
     for (let liEl of liEls) {
@@ -123,7 +115,6 @@ class CartView {
 
       checkBtn.addEventListener("click", (e) => {
         const targetId = e.target.parentNode.getAttribute("data-id");
-
         this.#storage.handlePurchased(targetId);
         this.render();
       });
@@ -139,7 +130,6 @@ class CartView {
       if (this.#storage.getNumberOfItems === 0) return;
       const purchasedCountEl = document.querySelector(".purchased__count");
       const purchasedPriceEl = document.querySelector(".purchased__price");
-
       const purchasedItems = this.#storage
         .getAllItems()
         .filter((item) => item.purchased === true);
@@ -147,11 +137,11 @@ class CartView {
       purchasedCountEl.innerText = `${
         purchasedItems.length
       }/${this.#storage.getNumberOfItems()}`;
-
       purchasedPriceEl.innerText = convertFormat.price(
         purchasedItems.reduce((acc, crr) => acc + Number(crr.price), 0)
       );
     };
+
     calculatePurchased();
   }
 
@@ -161,29 +151,31 @@ class CartView {
     const onDragStart = (e) => {
       this.#dragTargetEl = e.target.closest("li");
       if (!this.#dragTargetEl) return;
-
       this.#dragTargetEl.classList.add("drag-target");
       e.dataTransfer.setData("text/plain", this.#dragTargetEl.dataset.id);
     };
+
     const onDragEnter = (e) => {
       document
         .querySelectorAll(".cart-item")
         .forEach((cartItemEl) => cartItemEl.classList.remove("drag-hover"));
-
       this.#dropTargetEl = e.target.closest("li");
       if (!this.#dropTargetEl) return;
       this.#dropTargetEl.classList.add("drag-hover");
       this.#dropTargetId = this.#dropTargetEl.dataset.id;
     };
+
     const onDragOver = (e) => {
       e.preventDefault();
     };
+
     const onDragEnd = (e) => {
       this.#dragTargetEl.classList.remove("drag-target");
       document
         .querySelectorAll(".cart-item")
         .forEach((cartItemEl) => cartItemEl.classList.remove("drag-hover"));
     };
+
     const onDrop = (e) => {
       const dragTargetId = e.dataTransfer.getData("text/plain");
       const copyDragTargetData = this.#storage.getItem(dragTargetId);
@@ -195,7 +187,6 @@ class CartView {
       } else {
         this.#storage.changeItemOrder(copyDragTargetData, dropTargetIndex);
       }
-
       this.render();
     };
 
