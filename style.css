@@ -36,6 +36,10 @@
   box-sizing: border-box;
 }
 
+input {
+  font-size: inherit;
+}
+
 button {
   padding: 0;
   border: none;
@@ -276,6 +280,14 @@ main .cart::-webkit-scrollbar {
     flex-basis: auto;
   }
 
+  header .add-ons .date {
+    margin: 0;
+  }
+
+  .cart__list li b span {
+    padding: 0;
+  }
+
   .form {
     display: flex;
     justify-content: space-between;
@@ -284,6 +296,8 @@ main .cart::-webkit-scrollbar {
 
   .form input {
     width: 44%;
+    font-size: var(--font-base-pc);
+    transform: scale(0.87);
   }
 
   .button--add {
