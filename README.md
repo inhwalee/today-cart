@@ -15,7 +15,7 @@
 <img src='https://user-images.githubusercontent.com/54103723/179262620-4b71ee35-5fad-4876-a544-e654e8277324.png' width='380'>
 
 ## 수정 및 보완할 점
-- Cookie SameSite 관련 경고 해결 (간헐적 발생)
+- Cookie SameSite 관련 경고 해결 (간헐적 발생/체크필요)
 - 아이템 수정 기능 추가
 - 모바일에도 드래그 앤 드롭 기능 추가
 - 모바일에도 이미지 캡쳐 기능 추가
