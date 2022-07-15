@@ -1,5 +1,5 @@
 # Today Cart
-[https://inhwalee.github.io/today-cart/](https://inhwalee.github.io/today-cart/)
+[DEMO](https://inhwalee.github.io/today-cart/)
   
 ![today-cart](https://user-images.githubusercontent.com/54103723/179225330-b798db39-fc1e-45ed-9bc0-7da57786e98d.png)
 
