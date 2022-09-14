@@ -53,8 +53,15 @@
         </div>
       </section>
       <form class="form" data-html2canvas-ignore="true">
-        <input id="name" type="text" placeholder="상품명" autocomplete="off" />
-        <input id="price" type="number" value="0" step="1" min="0" placeholder="가격" autocomplete="off" />
+        <div>
+          <input id="name" type="text" placeholder="상품명" list='item-name' autocomplete="off" />
+          <datalist id="item-name">
+            <option value="우유">
+            <option value="계란">
+            <option value="고기">
+          </datalist>
+          <input id="price" type="number" value="0" step="1" min="0" placeholder="가격" autocomplete="off" />
+        </div>
         <button type="submit" class="button--add material-symbols-outlined">
           add_circle
         </button>
