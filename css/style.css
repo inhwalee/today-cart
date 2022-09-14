@@ -12,8 +12,8 @@
   --color-gray: #ddd;
   --color-dark-gray: #777;
   --color-black: #111;
-  --color-form: #3d3d3d;
-  --color-input: #4e4e4e;
+  --color-form: #e7e2d2;
+  --color-input: #ccc7b4;
   --color-main: #9faf00;
   --color-sub: #8b9704;
   --color-point: #ffa12d;
@@ -251,7 +251,7 @@ main .cart::-webkit-scrollbar {
   background-color: var(--color-input);
   font-size: var(--font-base-pc);
   transform: scale(0.87);
-  color: var(--color-white);
+  color: var(--color-black);
 }
 
 @media screen and (min-width: 340px) {
