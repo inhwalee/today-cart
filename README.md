@@ -7,6 +7,7 @@
 - HTML
 - CSS
 - JavaScript
+- html2canvas
 
 ## 구현한 기능
 - 아이템 추가, 삭제, 구매 완료처리 기능
