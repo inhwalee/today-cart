@@ -59,11 +59,12 @@ function setHeaderView() {
         function captureAndSaveImage(uri, name) {
           const link = document.createElement("a");
           link.href = uri;
+          document.body.appendChild(link);
           link.download = `${name}.png`;
           link.click();
+          window.alert("캡쳐 완료 📸✔");
         }
       })
-      .then(() => window.alert("캡쳐 완료 📸✔"))
       .then(
         document
           .querySelectorAll(".button--remove")
