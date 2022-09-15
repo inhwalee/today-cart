@@ -11,8 +11,8 @@
 
 ## 구현한 기능
 - 아이템 추가, 삭제, 구매 완료처리 기능
-- 드래그 앤 드롭을 통한 아이템 순서 변경 기능 (pc)
-- [html2canvas](https://html2canvas.hertzen.com/)를 이용한 이미지 캡쳐 및 저장 기능 (pc)
+- 드래그 앤 드롭을 통한 아이템 순서 변경 기능
+- [html2canvas](https://html2canvas.hertzen.com/)를 이용한 이미지 캡쳐 및 저장 기능
 <img src='https://user-images.githubusercontent.com/54103723/179262620-4b71ee35-5fad-4876-a544-e654e8277324.png' width='380'>
 
 ## 수정 및 보완할 점
