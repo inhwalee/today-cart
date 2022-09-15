@@ -1,4 +1,7 @@
 # Today Cart
+
+오늘 장 볼 상품과 예상 가격을 입력하고 하나씩 체크하며 장 볼 수 있도록 개발한 웹 앱입니다.
+
 [DEMO](https://inhwalee.github.io/today-cart/)
   
 ![today-cart](https://user-images.githubusercontent.com/54103723/179262455-09433f46-9fec-44e0-985b-134598877952.gif)
